@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="decimal-table">
+      <tr>
+        <th><label class="control-label">Purchase Price</label></th>
+        <th class="no-decimals">$<span id="purchase_price">3434.55</span></th>
+      </tr>
+      <tr>
+        <th><label class="control-label">Down Payment</label></th>
+        <th>$<span id="total_dp">43434.66</span></th>
+      </tr>
+      <tr>
+        <th><label class="control-label">Principal & Interest:</label></th>
+        <th>$<span id="monthly-payment">3444.666</span></th>
+      </tr>
+      <!--<tr>
+            <th><label class="control-label">Principal:</label></th>
+            <th>$<span id="mortgage_principal"></span></th>
+        </tr>
+        <tr>
+            <th><label class="control-label">Interest:</label></th>
+            <th>$<span id="total-interest"></span></th>
+        </tr>-->
+      <tr>
+        <th><label class="control-label">Home Insurance:</label></th>
+        <th>$<span id="home-insurance">2323.545</span></th>
+      </tr>
+      <tr>
+        <th><label class="control-label">Property Tax:</label></th>
+        <th>$<span id="property-tax">3434.555</span></th>
+      </tr>
+      <tr>
+        <th><label class="control-label">Mortgage Insurance</label></th>
+        <th>$<span id="mortgage-insurance">43434.22</span></th>
+      </tr>
+      <tr>
+        <th><label class="control-label">HOA Dues:</label></th>
+        <th>$<span id="monthly_hoa">76767.34</span></th>
+      </tr>
+      <tr>
+        <th><label class="control-label">Total Monthly Payment:</label></th>
+        <th>$<span id="monthly_total_pay">2323.65</span></th>
+      </tr>
+      <tr>
+        <th>
+          <label class="control-label"
+            >Total Interest Paid Over Life Of The Loan</label
+          >
+        </th>
+        <th>$<span id="total_interest">34345.222</span></th>
+      </tr>
+      <tr>
+        <th>
+          <label class="control-label"
+            >Total Principal Paid Over Life Of The Loan</label
+          >
+        </th>
+        <th>$<span id="total_principal">23343.555</span></th>
+      </tr>
+    </table>
+    <script type="module">
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let test = () => {
+          let spans = document.querySelectorAll("table tr th span");
+          spans.forEach((span) => {
+            if (span.innerText) {
+              let removeComa = span?.innerText?.split(",").join("");
+              let convertToNum = parseInt(removeComa);
+              let convertToInt = parseFloat(convertToNum);
+              span.innerText = convertToInt;
+             console.log(span.innerHTML)
+              
+            }
+          });
+        };
+
+        console.log("function called");
+        test();
+      });
+    </script>
+  </body>
+</html>
